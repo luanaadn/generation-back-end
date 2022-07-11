@@ -1,14 +1,14 @@
-package Exercicios;
+package LacoDeDecisao;
 
 import java.util.Scanner;
 
-public class LacoRepeticao02 {
+public class Questão02 {
 
 	public static void main(String[] args) {
-		
+
 		int a, b, c;
 
-		Scanner leia = new Scanner(System.in); //Criando um objeto do tipo scanner chamado leia.
+		Scanner leia = new Scanner(System.in); // Criando um objeto do tipo scanner chamado leia.
 
 		System.out.println("\nDigite o valor de A: ");
 		a = leia.nextInt();
@@ -30,5 +30,7 @@ public class LacoRepeticao02 {
 		} else {
 			System.out.println("\nA ordem crescente é: " + c + " , " + b + " , " + a + ".");
 		}
+
 	}
+
 }

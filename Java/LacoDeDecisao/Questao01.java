@@ -1,11 +1,10 @@
-package Exercicios;
+package LacoDeDecisao;
 
 import java.util.Scanner;
 
-public class LacoRepeticao01 {
+public class Questao01 {
 
 	public static void main(String[] args) {
-		
 		int n1, n2, n3;
         Scanner leia = new Scanner(System.in);
         

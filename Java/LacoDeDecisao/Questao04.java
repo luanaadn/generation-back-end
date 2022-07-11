@@ -1,8 +1,8 @@
-package Exercicios;
+package LacoDeDecisao;
 
 import java.util.Scanner;
 
-public class LacoRepeticao04 {
+public class Questao04 {
 
 	public static void main(String[] args) {
 
@@ -21,4 +21,5 @@ public class LacoRepeticao04 {
 		}
 		System.out.printf("\nValor: %.2f", valor);
 	}
+
 }
