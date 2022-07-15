@@ -4,10 +4,23 @@ public class Animal {
 
 	private String nome;
 	private int idade;
-	
-	
-	public String emitirSom () {
-		return "Emitindo som ...";
+
+	public String emitirSom() {
+		return "Emitindo som...";
+	}
+
+	public void emitir() {
+		System.out.println("Emitindo som ...");
+	}
+
+	public Animal(String nome, int idade) {
+		this.nome = nome;
+		this.idade = idade;
+	}
+
+	@Override
+	public String toString() {
+		return "\nO nome do animal é " + nome + " e sua idade é " + idade + ".";
 	}
 
 	public String getNome() {
