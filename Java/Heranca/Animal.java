@@ -1,26 +1,19 @@
 package Heranca;
 
-public class Animal {
+public abstract class Animal {
 
 	private String nome;
 	private int idade;
-
-	public String emitirSom() {
-		return "Emitindo som...";
-	}
-
-	public void emitir() {
-		System.out.println("Emitindo som ...");
-	}
 
 	public Animal(String nome, int idade) {
 		this.nome = nome;
 		this.idade = idade;
 	}
 
-	@Override
+	public abstract void emitirSom();
+
 	public String toString() {
-		return "\nO nome do animal é " + nome + " e sua idade é " + idade + ".";
+		return "O animal de nome " + nome + " tem " + idade + " ano(s)";	
 	}
 
 	public String getNome() {

@@ -1,6 +1,6 @@
 package Heranca;
 
-public class Cachorro extends Animal implements AnimalInterface {
+public class Cachorro extends Animal{
 
 	private String raca;
 
@@ -10,13 +10,14 @@ public class Cachorro extends Animal implements AnimalInterface {
 	}
 
 	@Override
-	public String toString() {
-		return "Cachorro" + super.toString() + "\nRaça: " + raca + ".";
+	public void emitirSom() {
+		System.out.println("Au au auuuu ...");
 	}
 
 	public void correr() {
 		System.out.println("Correndo ...");
 	}
+	
 
 	public String getRaca() {
 		return raca;

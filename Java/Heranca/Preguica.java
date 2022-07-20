@@ -7,11 +7,11 @@ public class Preguica extends Animal {
 	}
 	
 	@Override
-	public String toString() {
-		return "Preguiça" + super.toString();
+	public void emitirSom() {
+		System.out.println("Som da preguiça ...");
 	}
-	
-	public void subir() {
+
+	public void subirEmArvore() {
 		System.out.println("Subindo ...");
 	}
 

@@ -1,14 +1,14 @@
 package Heranca;
 
-public class Cavalo extends Animal implements AnimalInterface {
+public class Cavalo extends Animal {
 
 	public Cavalo(String nome, int idade) {
 		super(nome, idade);
 	}
 
 	@Override
-	public String toString() {
-		return "Cavalo" + super.toString();
+	public void emitirSom() {
+		System.out.println("Hiiiiin ...");
 	}
 
 	public void correr() {

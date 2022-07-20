@@ -8,9 +8,9 @@ public class AnimalTeste {
 		Cavalo cav = new Cavalo("Ventania", 3);
 		Preguica preg = new Preguica("Matheus", 2);
 
-		System.out.println(dog.toString() + "\n");
-		System.out.println(cav.toString() + "\n");
-		System.out.println(preg.toString());
+		System.out.println(dog.toString() + " e é da raça " + dog.getRaca() + ".\n");
+		System.out.println(cav.toString() + ".\n");
+		System.out.println(preg.toString() + ".");
 
 	}
 
