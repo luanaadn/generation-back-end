@@ -9,7 +9,8 @@ public class Caneta { // Qualificador de acesso + class + nome da classe.
 	int carga;
 	boolean tampada;
 
-	// Comportamentos - Métodos (Sempre tem parênteses no final).
+	// Comportamentos - Métodos (Sempre tem parênteses no final). Inicializa os
+	// atributos.
 
 	public void escrever() {
 		if (this.tampada == true)
@@ -25,7 +26,7 @@ public class Caneta { // Qualificador de acesso + class + nome da classe.
 	public void destampar() {
 		this.tampada = false;
 	}
-	
+
 	public void estado() {
 		System.out.println("Cor " + this.cor);
 		System.out.println("Ponta: " + this.tampada);
