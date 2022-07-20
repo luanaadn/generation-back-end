@@ -13,7 +13,7 @@ public abstract class Animal {
 	public abstract void emitirSom();
 
 	public String toString() {
-		return "O animal de nome " + nome + " tem " + idade + " ano(s)";	
+		return "O animal de nome " + nome + " tem " + idade + " ano(s)";
 	}
 
 	public String getNome() {

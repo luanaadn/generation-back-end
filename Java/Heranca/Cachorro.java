@@ -1,6 +1,6 @@
 package Heranca;
 
-public class Cachorro extends Animal{
+public class Cachorro extends Animal {
 
 	private String raca;
 
@@ -17,7 +17,6 @@ public class Cachorro extends Animal{
 	public void correr() {
 		System.out.println("Correndo ...");
 	}
-	
 
 	public String getRaca() {
 		return raca;
