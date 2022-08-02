@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -13,24 +14,32 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.UpdateTimestamp;
 
-@Entity
-@Table(name = "tb_postagens")
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@Entity // Essa classe é uma entidade.
+@Table(name = "tb_postagens") // Dentro do banco de dados essa entidade vai virar uma tabela.
 public class PostagemModel {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // Id auto_increment. O id será transformado em uma primary key.
 	private Long id;
 
 	@NotBlank(message = "O atributo título é Obrigatório e não pode utilizar espaços em branco!")
-	@Size(min = 5, max = 100, message = "O atributo título deve conter no mínimo 05 e no máximo 100 caracteres")
+	@Size(min = 5, max = 100, message = "O atributo título deve conter no mínimo 05 e no máximo 100 caracteres") // Quantidade
+																													// de
+																													// caracter.
 	private String titulo;
 
-	@NotNull(message = "O atributo texto é Obrigatório!")
+	@NotNull(message = "O atributo texto é Obrigatório!") // Não pode ser um campo vazio.
 	@Size(min = 10, max = 1000, message = "O atributo texto deve conter no mínimo 10 e no máximo 500 caracteres")
 	private String texto;
 
-	@UpdateTimestamp
+	@UpdateTimestamp // Informa JPA que estamos trabalhando com tempo.
 	private LocalDateTime data;
+
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private TemaModel tema;
 
 	public Long getId() {
 		return id;
@@ -62,6 +71,14 @@ public class PostagemModel {
 
 	public void setData(LocalDateTime data) {
 		this.data = data;
+	}
+
+	public TemaModel getTema() {
+		return tema;
+	}
+
+	public void setTema(TemaModel tema) {
+		this.tema = tema;
 	}
 
 }
