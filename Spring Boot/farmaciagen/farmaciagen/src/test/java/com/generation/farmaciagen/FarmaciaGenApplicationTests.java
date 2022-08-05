@@ -1,10 +1,10 @@
-package com.generation.hello;
+package com.generation.farmaciagen;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HelloWorldApplicationTests {
+class FarmaciaGenApplicationTests {
 
 	@Test
 	void contextLoads() {
