@@ -40,13 +40,13 @@ public class ProdutoController {
 	}
 
 	@GetMapping("/nome/{nome}")
-	public ResponseEntity<List<ProdutoModel>> getByNomeProduto(@PathVariable String nomeProduto) {
-		return ResponseEntity.ok(produtoRepository.findAllByFabricanteContainingIgnoreCase(nomeProduto));
+	public ResponseEntity<List<ProdutoModel>> getByNomeProduto(@PathVariable String nome) {
+		return ResponseEntity.ok(produtoRepository.findAllByNomeProdutoContainingIgnoreCase(nome));
 	}
 
 	@GetMapping("/fabricante/{fabricante}")
 	public ResponseEntity<List<ProdutoModel>> getByFabricante(@PathVariable String fabricante) {
-		return ResponseEntity.ok(produtoRepository.findAllByFabricanteContainingIgnoreCase(fabricante));
+		return ResponseEntity.ok(produtoRepository.findAllByNomeProdutoContainingIgnoreCase(fabricante));
 	}
 
 	@PostMapping
