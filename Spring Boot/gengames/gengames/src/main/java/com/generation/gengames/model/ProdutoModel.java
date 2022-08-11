@@ -43,7 +43,11 @@ public class ProdutoModel {
 
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
-	private CategoriaModel chaveEstrangeira;
+	private CategoriaModel categoria;
+
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private UsuarioModel usuario;
 
 	public Long getId() {
 		return id;
@@ -93,11 +97,28 @@ public class ProdutoModel {
 		this.quantidade = quantidade;
 	}
 
+	public LocalDateTime getDataCompra() {
+		return dataCompra;
+	}
+
+	public void setDataCompra(LocalDateTime dataCompra) {
+		this.dataCompra = dataCompra;
+	}
+
 	public CategoriaModel getCategoria() {
-		return chaveEstrangeira;
+		return categoria;
 	}
 
 	public void setCategoria(CategoriaModel categoria) {
-		this.chaveEstrangeira = categoria;
+		this.categoria = categoria;
 	}
+
+	public UsuarioModel getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(UsuarioModel usuario) {
+		this.usuario = usuario;
+	}
+
 }

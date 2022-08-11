@@ -26,8 +26,8 @@ public class CategoriaModel {
 	@Size(min = 4, max = 100)
 	private String categoriaProduto;
 
-	@OneToMany(mappedBy = "chaveEstrangeira", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties("chaveEstrangeira")
+	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("categoria")
 	private List<ProdutoModel> produto;
 
 	public Long getId() {

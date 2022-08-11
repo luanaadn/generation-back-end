@@ -39,14 +39,14 @@ public class CategoriaController {
 				.orElse(ResponseEntity.notFound().build());
 	}
 
-	@GetMapping("/nome/{nome}")
-	public ResponseEntity<List<CategoriaModel>> getByNome(@PathVariable String nome) {
+	@GetMapping("/nome/{nome}")     //caminho + o nome de fato.
+	public ResponseEntity<List<CategoriaModel>> getByNome(@PathVariable String nome) { //"Nome" do getByNome é apenas o nome da função. Pode ser qualquer nome.
 		return ResponseEntity.ok(categoriaRepository.findAllByCategoriaProdutoContainingIgnoreCase(nome));
 	}
 
 	@PostMapping
 	public ResponseEntity<CategoriaModel> postCategoria(@Valid @RequestBody CategoriaModel categoria) {
-		return ResponseEntity.status(HttpStatus.CREATED).body(categoriaRepository.save(categoria));
+		return ResponseEntity.status(HttpStatus.CREATED).body(categoriaRepository.save(categoria));    // body: Passar a informação no body.
 	}
 
 	@PutMapping
