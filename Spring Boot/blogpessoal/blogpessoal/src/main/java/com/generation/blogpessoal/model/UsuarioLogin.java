@@ -14,7 +14,7 @@ public class UsuarioLogin {
 
 	private String foto;
 
-	private String token;
+	private String token; // Fica aqui pq se ficasse na tabela entraria no db, e isso não pode ocorrer.
 
 	public Long getId() {
 		return id;

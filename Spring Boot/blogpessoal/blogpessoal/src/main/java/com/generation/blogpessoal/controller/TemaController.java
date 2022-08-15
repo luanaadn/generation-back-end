@@ -20,9 +20,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.generation.blogpessoal.model.TemaModel;
 import com.generation.blogpessoal.repository.TemaRepository;
 
-@RestController
+@RestController // A classe controladora responde pelas requisições http enviadas p/ o endpoint.
 @RequestMapping("/temas")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "*", allowedHeaders = "*") // Permite o recebimento de requisições de fora do domínio.
 public class TemaController {
 
 	@Autowired

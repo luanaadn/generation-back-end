@@ -20,6 +20,17 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name = "tb_usuarios")
 public class UsuarioModel {
 
+	public UsuarioModel(Long id, String nome, String usuario, String senha, String foto) {
+		this.id = id;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+		this.foto = foto;
+	}
+
+	public UsuarioModel() {
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -29,7 +40,7 @@ public class UsuarioModel {
 
 	@NotNull(message = "O atributo usuário é obrigatório!")
 	@Email(message = "O atributo usuário deve ser um email vélido")
-	private String usuario;
+	private String usuario; // Não pode ter o nome "email" pq ela é uma palavra reservada.
 
 	@NotBlank(message = "O atributo senha é obrigatório!")
 	@Size(min = 8, message = "A senha deve ter, no mínimo, 8 caracteres")
@@ -38,7 +49,8 @@ public class UsuarioModel {
 	@Size(max = 5000, message = "O link da foto não pode ser maior do que 5000 caracteres")
 	private String foto;
 
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE) // REMOVE: Quando apaga o filho, apaga o pai. Se
+																	// apagar usuáro, apaga postagem.
 	@JsonIgnoreProperties("usuario")
 	private List<PostagemModel> postagem;
 

@@ -24,22 +24,25 @@ public class PostagemModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // Id auto_increment. O id será transformado em uma primary key.
 	private Long id;
 
-	@NotBlank(message = "O atributo título é Obrigatório e não pode utilizar espaços em branco!")
-	@Size(min = 5, max = 100, message = "O atributo título deve conter no mínimo 05 e no máximo 100 caracteres") // Quantidade
-																													// de
-																													// caracter.
+	@NotBlank(message = "O atributo título é obrigatório e não pode utilizar espaços em branco!")
+	@Size(min = 5, max = 100, message = "O atributo título deve conter no mínimo 05 e no máximo 100 caracteres")
 	private String titulo;
 
-	@NotNull(message = "O atributo texto é Obrigatório!") // Não pode ser um campo vazio.
+	@NotNull(message = "O atributo texto é obrigatório!") // Não pode ser um campo vazio.
 	@Size(min = 10, max = 1000, message = "O atributo texto deve conter no mínimo 10 e no máximo 500 caracteres")
 	private String texto;
 
-	@UpdateTimestamp // Informa JPA que estamos trabalhando com tempo.
+	@UpdateTimestamp // Informa JPA que estamos trabalhando com tempo atual da máquina.
 	private LocalDateTime data;
 
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
-	private TemaModel tema;
+	private TemaModel tema; // Criando o campo "tema" para receber a chave estrangeira. Como se fosse o
+							// categoria_id do MySQL.
+
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private UsuarioModel usuario;
 
 	public Long getId() {
 		return id;
@@ -79,6 +82,14 @@ public class PostagemModel {
 
 	public void setTema(TemaModel tema) {
 		this.tema = tema;
+	}
+
+	public UsuarioModel getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(UsuarioModel usuario) {
+		this.usuario = usuario;
 	}
 
 }
