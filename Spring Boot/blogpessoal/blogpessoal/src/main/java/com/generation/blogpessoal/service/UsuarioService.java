@@ -56,8 +56,8 @@ public class UsuarioService {
 		return Optional.empty();
 	}
 
-	public Optional<UsuarioLogin> autenticarUsuario(Optional<UsuarioLogin> usuarioLogin) { // Nome, usuário, senha e token.
-																							
+	public Optional<UsuarioLogin> autenticarUsuario(Optional<UsuarioLogin> usuarioLogin) { // Nome, usuário, senha e
+																							// token.
 
 		Optional<UsuarioModel> usuario = usuarioRepository.findByUsuario(usuarioLogin.get().getUsuario());
 

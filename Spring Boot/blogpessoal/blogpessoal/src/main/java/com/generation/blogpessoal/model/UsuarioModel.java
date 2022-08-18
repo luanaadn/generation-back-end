@@ -16,6 +16,8 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 @Entity
 @Table(name = "tb_usuarios")
 public class UsuarioModel {
@@ -38,8 +40,9 @@ public class UsuarioModel {
 	@NotNull(message = "O atributo nome é obrigatório!")
 	private String nome;
 
+	@Schema(example = "email@email.com.br")
 	@NotNull(message = "O atributo usuário é obrigatório!")
-	@Email(message = "O atributo usuário deve ser um email vélido")
+	@Email(message = "O atributo usuário deve ser um email válido")
 	private String usuario; // Não pode ter o nome "email" pq ela é uma palavra reservada.
 
 	@NotBlank(message = "O atributo senha é obrigatório!")
@@ -49,8 +52,7 @@ public class UsuarioModel {
 	@Size(max = 5000, message = "O link da foto não pode ser maior do que 5000 caracteres")
 	private String foto;
 
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE) // REMOVE: Quando apaga o filho, apaga o pai. Se
-																	// apagar usuáro, apaga postagem.
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List<PostagemModel> postagem;
 
